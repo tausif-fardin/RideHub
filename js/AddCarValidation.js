@@ -11,12 +11,12 @@ function validateUserForm() {
         error.innerHTML = "All fields are required js ";
         return false;
     }
-    else if (!isNaN(name)) {
+    else if (typeof name !== 'string') {
         error.innerHTML = "User Name should be string";
         return false;
     }
     else if (name.length < 1) {
-        error.innerHTML = "Car Name should be 1characters long";
+        error.innerHTML = "Car Name should be at least 1 characters long";
         return false;
     }
     else if (model < 8) {
@@ -25,8 +25,8 @@ function validateUserForm() {
 
     }
 
-    else if (SitCount.length > 1) {
-        error.innerHTML = "seat should be 1 characters long";
+    else if (SitCount.length > 2) {
+        error.innerHTML = "Seat should be 1 characters long";
         return false;
     }
 
